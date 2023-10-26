@@ -11,8 +11,11 @@
   display: block;
 }
 
-.sqs-edit-mode-active .hide-section {
-  display: block;
+body:not(.sqs-edit-mode-active) .hidden-random-section {
+  display:none;
+}
+body:not(.sqs-edit-mode-active) .random-hero-section {
+  padding-top: var(--artificial-hero-top-padding, 0px)
 }
 
 .sqs-edit-mode-active .code-block [data-wm-plugin="random-sections"] {
@@ -38,11 +41,10 @@
 /** 
 * Fade In
 **/
-body:not(.sqs-edit-mode-active) {
-  background-color:white;
-  opacity:0;
+body:not(.sqs-edit-mode-active) .content-wrapper{
+  opacity: var(--random-section-load-opacity, 0);
   transition: opacity .1s ease .2s;
 }
-body.wm-show-page{
+body.wm-show-page .content-wrapper{
   opacity:1;
 }
