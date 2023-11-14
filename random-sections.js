@@ -28,6 +28,7 @@ class RandomSections {
   init () {
     this.findParentSections();
     this.randomSection();
+    this.el.classList.add('loaded')
     //this.fadeIn();
   }
     
@@ -104,13 +105,16 @@ class RandomSections {
   // End of Class
 }
 
-(function(){
-  // Find All Instances
-  let allInstances = document.querySelectorAll('[data-wm-plugin="random-sections"]');
+
+window.initRandomSections = () => {
+    // Find All Instances
+  let allInstances = document.querySelectorAll('[data-wm-plugin="random-sections"]:not(.loaded)');
   
   // Loop Through All Instances
   for (let instance of allInstances) {
     new RandomSections(instance);
   }
   document.body.classList.add('wm-show-page');
-}())
+}
+
+window.initRandomSections();
