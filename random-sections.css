@@ -8,7 +8,7 @@
 }
 
 .show-section {
-  display: block;
+  display: flex;
 }
 
 body:not(.sqs-edit-mode-active) .hidden-random-section {
